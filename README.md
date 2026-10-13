@@ -1,16 +1,23 @@
-## Hi there 👋
+# Marta Kapielska — portfolio
 
-<!--
-**kapielska/kapielska** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Public GitHub Pages portfolio of transformation, applied AI, and data initiatives.
 
-Here are some ideas to get you started:
+## Add a project
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+1. Copy `project-template.md` into `_projects/`.
+2. Give the file a kebab-case name, for example `_projects/customer-search.md`.
+3. Complete the YAML front matter, including `client` (an anonymous client profile, shown on the project page). Filter options are generated from `engagement`, `role`, `domain`, `technologies`, `industry`, and `maturity`.
+4. Use `poc`, `mvp`, or `production` for `maturity`. For `engagement`, use `Strategy & Architecture`, `Transformation & Modernization`, `Applied Research & Innovation`, `Process & Knowledge Design`, `Hands-on Engineering`, or another short phrase describing the kind of engagement you brought to the work.
+5. Keep the template sections: challenge, strategic rationale, technical approach, contribution, and future direction.
+6. Set the next numeric `order` and choose an accent color.
+7. Preview locally with `bundle exec jekyll serve` or `jekyll serve`, then commit and push.
+
+No index page or filter code needs to change when onboarding a project: the collection and filter options are generated automatically from project metadata.
+
+## Add a credential
+
+Add an entry to `_data/credentials.yml` (name, issuer, badge image, verification `url`, `issued`, `expires` (or `retired` for retired ones), and `status`: `active`, `expired`, or `retired`). Save the badge image under `assets/badges/`. If `status` is omitted it is derived from `expires`. The section is hidden when the file is empty.
+
+## Contact links
+
+Email, LinkedIn, and GitHub links shown in the header and footer are set under `social` in `_config.yml`. Update them there if they ever change.

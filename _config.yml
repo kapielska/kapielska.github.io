@@ -1,0 +1,20 @@
+title: Marta Kapielska | Strategy, Transformation & Applied AI
+description: A portfolio of transformation, applied AI, and data initiatives.
+url: "https://kapielska.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+social:
+  linkedin: https://www.linkedin.com/in/marta-kapielska/
+  github: https://github.com/kapielska
+  email: marta.kapielska@gmail.com
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project

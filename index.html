@@ -1,0 +1,127 @@
+---
+layout: default
+title: Marta Kapielska | Strategy, Transformation & Applied AI
+---
+<section class="hero" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow">Strategy · Transformation · Applied AI</p>
+    <h1 id="intro-title">Shaping how organizations turn data and AI into <em>lasting capability.</em></h1>
+    <p class="hero-text">I connect strategy, people, and technology to turn emerging possibilities into solutions that work, from first prototype to production.</p>
+    <a class="button" href="#work">Explore the work <span>↓</span></a>
+  </div>
+</section>
+
+<section class="work-section" id="work" aria-labelledby="work-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">The portfolio</p><h2 id="work-title">Selected work</h2></div>
+    <p class="section-intro">Explore initiatives by the kind of engagement, my role, the business domain, the technologies involved, the industry, or how mature the solution became.</p>
+  </div>
+
+  <div class="filters" aria-label="Filter projects">
+    <div class="filter-group" data-filter-group="engagement">
+      <span class="filter-label">Engagement</span>
+      <div class="chip-row" role="group" aria-label="Filter by engagement type">
+        <button type="button" class="chip is-active" data-value="all">All engagements</button>
+        {% assign engagements = site.projects | map: 'engagement' | uniq | sort %}
+        {% for value in engagements %}<button type="button" class="chip" data-value="{{ value | slugify }}">{{ value }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="filter-group" data-filter-group="role">
+      <span class="filter-label">Role</span>
+      <div class="chip-row" role="group" aria-label="Filter by role">
+        <button type="button" class="chip is-active" data-value="all">All roles</button>
+        {% assign roles = site.projects | map: 'role' | uniq | sort %}
+        {% for value in roles %}<button type="button" class="chip" data-value="{{ value | slugify }}">{{ value }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="filter-group" data-filter-group="domain">
+      <span class="filter-label">Business domain</span>
+      <div class="chip-row" role="group" aria-label="Filter by business domain">
+        <button type="button" class="chip is-active" data-value="all">All domains</button>
+        {% assign domains = site.projects | map: 'domain' | uniq | sort %}
+        {% for value in domains %}<button type="button" class="chip" data-value="{{ value | slugify }}">{{ value }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="filter-group" data-filter-group="technology">
+      <span class="filter-label">Technology</span>
+      <div class="chip-row" role="group" aria-label="Filter by technology">
+        <button type="button" class="chip is-active" data-value="all">All technologies</button>
+        {% assign technologies = site.projects | map: 'technologies' | join: ',' | split: ',' | uniq | sort %}
+        {% for value in technologies %}<button type="button" class="chip" data-value="{{ value | strip | slugify }}">{{ value | strip }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="filter-group" data-filter-group="industry">
+      <span class="filter-label">Industry</span>
+      <div class="chip-row" role="group" aria-label="Filter by industry">
+        <button type="button" class="chip is-active" data-value="all">All industries</button>
+        {% assign industries = site.projects | map: 'industry' | uniq | sort %}
+        {% for value in industries %}<button type="button" class="chip" data-value="{{ value | slugify }}">{{ value }}</button>{% endfor %}
+      </div>
+    </div>
+    <div class="filter-group" data-filter-group="maturity">
+      <span class="filter-label">Maturity</span>
+      <div class="chip-row" role="group" aria-label="Filter by project maturity">
+        <button type="button" class="chip is-active" data-value="all">All stages</button>
+        {% assign stages = site.projects | map: 'maturity' | uniq %}
+        {% for value in stages %}<button type="button" class="chip" data-value="{{ value | slugify }}">{{ value | upcase }}</button>{% endfor %}
+      </div>
+    </div>
+    <button class="reset-button" type="button" data-reset>Reset filters</button>
+  </div>
+
+  <p class="results-count" aria-live="polite"></p>
+
+  <div class="project-grid" data-project-grid>
+    {% assign projects = site.projects | sort: 'order' %}
+    {% for project in projects %}
+    <article class="project-card" data-project-card data-role="{{ project.role | slugify }}" data-technology="{% for technology in project.technologies %}{{ technology | slugify }} {% endfor %}" data-industry="{{ project.industry | slugify }}" data-domain="{{ project.domain | slugify }}" data-maturity="{{ project.maturity | slugify }}" data-engagement="{{ project.engagement | slugify }}" style="--card-accent: {{ project.accent }}">
+      <div class="card-top"><span class="project-index">{{ project.order | prepend: '0' | slice: -2, 2 }}</span><span class="stage">{{ project.maturity | upcase }}</span></div>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.summary }}</p>
+      <div class="card-bottom"><span>{{ project.engagement }}</span><a href="{{ project.url | relative_url }}" aria-label="Read more about {{ project.title }}">View case study →</a></div>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="empty-state" data-empty hidden>No projects match these filters. Try widening your selection.</p>
+</section>
+
+{% if site.data.credentials.size > 0 %}
+<section class="credentials-section" id="credentials" aria-labelledby="credentials-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">Credentials</p><h2 id="credentials-title">Certifications</h2></div>
+  </div>
+  <ul class="credential-grid">
+    {% for c in site.data.credentials %}
+    {% assign status = c.status %}
+    {% if status == nil and c.expires %}{% assign today = 'now' | date: '%s' %}{% assign exp = c.expires | date: '%s' %}{% if exp < today %}{% assign status = 'expired' %}{% else %}{% assign status = 'active' %}{% endif %}{% elsif status == nil %}{% assign status = 'active' %}{% endif %}
+    <li class="credential-card">
+      <img class="credential-badge" src="{{ c.badge | relative_url }}" alt="" width="72" height="72" loading="lazy">
+      <div class="credential-body">
+        <h3>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener noreferrer">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+        <p class="credential-issuer">{{ c.issuer }}</p>
+        <p class="credential-dates">Issued {{ c.issued | date: '%b %Y' }}{% if status == 'retired' and c.retired %} · Retired {{ c.retired | date: '%-d %b %Y' }}{% elsif c.expires %} · {% if status == 'active' %}Valid until{% else %}Expired{% endif %} {{ c.expires | date: '%b %Y' }}{% endif %}</p>
+      </div>
+      <span class="credential-status status-{{ status }}">{{ status }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="about-section" id="about">
+  <p class="eyebrow">About</p>
+  <div>
+    <h2>Thinking ahead, building to last.</h2>
+    <p>I work where strategy meets execution: finding the pattern in a complex problem, forming a view of where an organization could be in a few years, and turning it into steps that teams can adopt and own.</p>
+    <p>I have worked across data platforms, machine learning, and AI, from hands-on engineering to AI strategy and roadmaps. That range lets me connect roadmap decisions to what is technically feasible.</p>
+    <ul class="principles">
+      <li><strong>Anticipate</strong><span>Test emerging capabilities early and form a view on where they create value.</span></li>
+      <li><strong>Synthesize</strong><span>Distill complexity into clear frameworks, options, and decisions.</span></li>
+      <li><strong>Connect</strong><span>Align business and engineering, and lead the change management that makes AI adoption stick.</span></li>
+      <li><strong>Learn</strong><span>Turn each initiative into reusable insight.</span></li>
+    </ul>
+    <a class="button button-ghost" href="mailto:{{ site.social.email }}">Let's talk <span>→</span></a>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/filters.js' | relative_url }}"></script>
