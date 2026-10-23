@@ -11,13 +11,9 @@ technologies: [Technology one, Technology two, Technology three]
 order: 5
 accent: "#5e86a4"
 ---
-## The challenge
+## Business challenge and strategy
 
-What problem existed? Keep this focused on the user, business, or engineering need.
-
-## Strategic rationale
-
-Which decisions, trade-offs, or principles shaped the solution, and why? Write in a neutral, professional tone.
+What business or user need and constraints shaped the work? State the strategic choice and why, then describe the business value or capability delivered or enabled. Distinguish measured outcomes from intended value.
 
 ## Technical approach
 
@@ -29,9 +25,5 @@ Which decisions, trade-offs, or principles shaped the solution, and why? Write i
 
 - Describe your part in the work, in collaboration with others where applicable.
 - Include measurable outcomes where they can be shared safely.
-
-## Future direction
-
-Where could this evolve next, and what does it make possible for the organization?
 
 > Add a short note explaining what has been generalized or omitted for a public portfolio.

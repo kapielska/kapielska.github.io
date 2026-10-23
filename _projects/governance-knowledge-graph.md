@@ -1,6 +1,6 @@
 ---
 title: Governance Knowledge Graph
-summary: An ontology-driven service that transforms business data into an explorable RDF graph with safe natural-language querying.
+summary: Built a Java service that loads business data into an RDF graph and exposes SPARQL and ontology-constrained natural-language queries.
 role: AI / Backend Engineer
 client: Fortune 500 consumer goods enterprise
 industry: Consumer Packaged Goods
@@ -11,32 +11,34 @@ technologies: [Java, Spring Boot, Apache Jena, SPARQL, Azure OpenAI]
 order: 3
 accent: "#5e86a4"
 ---
-## The challenge
+## Business challenge and strategy
 
-Governance information was spread across structured files and difficult to query across business relationships, such as the links between applications, suppliers, purchases, risks, and controls. Users needed both an expert query interface and a simpler natural-language entry point.
-
-## Strategic rationale
-
-Governance questions are about relationships, so a graph fits better than separate tables. Users get both direct graph queries and a natural-language layer, with translation grounded strictly in the ontology. That trades some flexibility for trust and safety. The proof of concept was built to test this trade-off before committing to a full platform.
+Governance data was difficult to query across relationships among applications, suppliers, purchases, risks, and controls. Users needed both direct access for specialists and a simpler natural-language interface. We modeled the data as a graph and constrained generated queries to the ontology. This supports both user groups while limiting queries to the defined governance model; the proof of concept tests this approach before a larger platform investment.
 
 ## Technical approach
 
-- **Ontology and graph model:** RDF and OWL modeling in Apache Jena, with predefined reference facts loaded alongside ingested records.
-- **Ingestion:** a configuration-driven pipeline for delimited and spreadsheet data, with reusable mapping templates from source columns to graph classes and properties, and a shared data-source abstraction for multiple input formats.
-- **Query interface:** typed REST endpoints over SPARQL, with content negotiation for text, CSV, JSON, and XML results, documented through OpenAPI.
-- **Natural-language access:** question-to-query translation using Azure OpenAI, constrained by the ontology rather than free-form generation.
-- **Architecture:** Java 21 and Spring Boot with dependency injection and interface-based separation of REST, graph querying, ingestion, and translation.
-- **Quality:** focused unit tests for ingestion, parsing, mapping, and translation, plus health checks, configuration profiles, and local service emulation with Docker Compose.
+- **Graph model:** RDF and OWL classes and properties are defined in Apache Jena. Predefined reference facts are loaded with ingested records.
+- **Ingestion:** a configuration-driven pipeline reads delimited and spreadsheet data. Mapping templates map source columns to graph classes and properties; a shared data-source abstraction supports multiple input formats.
+- **Query API:** typed REST endpoints execute SPARQL queries and return text, CSV, JSON, or XML through content negotiation. OpenAPI documents the endpoints.
+- **Natural-language queries:** Azure OpenAI translates questions into queries constrained by the ontology.
+- **Service architecture:** Java 21 and Spring Boot use dependency injection and interfaces to separate REST, graph querying, ingestion, and translation.
+- **Quality and local development:** unit tests cover ingestion, parsing, mapping, and translation. Health checks and configuration profiles support operations; Docker Compose runs local service dependencies.
 
-## My contribution
+## My Role & Core Contributions
 
-- Designed the ontology-driven ingestion pipeline and the reusable mapping approach.
-- Exposed typed query endpoints with multiple export formats.
-- Grounded natural-language-to-query translation in the ontology.
+### AI Strategy & Advisory
+
+- Evaluated graph modeling for governance questions that depend on relationships among applications, suppliers, purchases, risks, and controls.
+- Tested ontology-constrained natural-language queries in a proof of concept before broader platform investment.
+
+### System Architecture & Technical Leadership
+
+- Designed the ontology-driven ingestion pipeline and reusable mappings from source columns to graph classes and properties.
+- Grounded natural-language query translation in the ontology and exposed typed query endpoints with multiple export formats.
 - Added API documentation, health checks, configuration profiles, and automated tests.
 
-## Future direction
+### Cross-Functional Governance & Delivery
 
-The prototype provides a clear path to production: durable graph snapshots, incremental ingestion, read-only validation of generated queries, authorization, query limits, provenance, and audit logging. Beyond that, a governed knowledge graph can become a shared, relationship-aware view of risk and control information that supports earlier and better-informed decisions.
+- Translated governance query needs into service capabilities in coordination with the project manager and technical lead.
 
 > This public summary removes company, business-unit, vendor, cloud-provider, identity-provider, and internal service names.
