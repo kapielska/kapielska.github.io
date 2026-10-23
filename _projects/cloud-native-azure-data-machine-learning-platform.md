@@ -1,6 +1,6 @@
 ---
 title: Cloud-Native Azure Data & Machine Learning Platform
-summary: Delivered Azure platform capabilities for distributed data processing, analytics, and machine learning workloads using Databricks and cloud data pipelines.
+summary: Productionized a modular wholesaler baseline capability within an Azure data and machine-learning platform supporting commercial analytics and recommendation workflows.
 role: Senior ML Platform Engineer / Data Engineer
 client: Large beverage and consumer goods enterprise
 industry: Consumer Packaged Goods
@@ -13,30 +13,32 @@ accent: "#2f7f78"
 ---
 ## Business challenge and strategy
 
-The organization needed a cloud-native platform to support advanced data processing, analytics, and machine learning workloads. The work combined distributed processing with managed data pipelines and deployment automation to provide platform capabilities for those workloads. No quantified business outcomes are available in the source material.
+The organization needed shared data and machine-learning capabilities to turn commercial and outlet data into consistent analytics and field recommendations. The broader platform supported a unified data model, micro-segmentation, outlet potential modeling, sales-visit optimization, and automated product-order recommendations.
+
+Within that platform, wholesaler baseline logic was captured in client notebooks and a proof of concept. Productionizing it required a clearer processing structure, validation of data assumptions, and effort estimates for adapting the module to additional countries. The approach was to separate the baseline workflow into explicit stages that could be reviewed and tested without treating proof-of-concept behavior as a production contract.
 
 ## Technical approach
 
-- **Platform:** Microsoft Azure capabilities supported enterprise-scale data processing, analytics, and machine learning workloads.
-- **Distributed processing:** Python and PySpark workloads ran on Databricks.
-- **Data pipelines:** Azure Data Factory supported cloud-native data workflows.
-- **Delivery:** Azure DevOps supported CI/CD processes and deployment automation; platform work also contributed to engineering standards.
+- **Platform:** Microsoft Azure hosted data-processing, analytics, and machine-learning workloads.
+- **Distributed processing:** Python and PySpark workloads ran on Databricks; Azure Data Factory supported data workflows.
+- **Commercial capabilities:** Shared platform components supported a unified data model, micro-segmentation, outlet potential modeling, sales-visit optimization, and product-order recommendations.
+- **Wholesaler baseline:** PySpark operations separated sales preprocessing, target processing, imputation, and target promotion into distinct steps.
+- **Quality and delivery:** Azure DevOps pipelines ran unit tests, dependency checks, formatting and static-analysis tools, type checks, and SonarCloud analysis.
 
 ## My Role & Core Contributions
 
-### Strategy & Advisory
+### AI Strategy & Advisory
 
-- Contributed to platform architecture decisions and engineering standards for data and machine learning workloads.
+- Formulated the productionization approach for the wholesaler baseline, translating client notebooks and proof-of-concept behavior into a staged processing design.
 
 ### System Architecture & Technical Leadership
 
-- Designed and delivered platform capabilities for scalable data and machine learning solutions.
-- Developed distributed processing workflows using PySpark and Databricks.
-- Built and enhanced Azure Data Factory pipelines.
+- Architected and implemented the baseline workflow as distinct PySpark stages for sales preprocessing, target processing, imputation, and promotion.
+- Diagnosed customer-data join mismatches caused by missing input restrictions, using test-run discrepancies to identify assumptions requiring review.
 
 ### Cross-Functional Governance & Delivery
 
-- Collaborated with engineering and business teams on platform capabilities.
-- Supported CI/CD processes and deployment automation using Azure DevOps.
+- Orchestrated reviews with the technical lead, business director, business specialist, and subject-matter experts, presenting test-run evidence, proof-of-concept gaps, and logic discrepancies.
+- Formulated person-day estimates for the team's rollout of the module to additional countries, supporting delivery planning.
 
 > This public summary omits the client organization, internal system names, and confidential implementation details.

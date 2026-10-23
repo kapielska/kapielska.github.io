@@ -1,7 +1,7 @@
 ---
 title: ZeroOps Initiative
 summary: An AI-enabled operations initiative combining bounded agentic knowledge workflows, pipeline monitoring, and automated business checks.
-role: AI Strategy & Solutions Consultant
+role: Lead Consultant, AI Strategy & Solutions
 client: Fortune 500 consumer goods enterprise
 industry: Consumer Packaged Goods
 domain: Operations and service management
