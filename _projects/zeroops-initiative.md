@@ -1,5 +1,5 @@
 ---
-title: "ZeroOps: Operations Transformation"
+title: ZeroOps Initiative
 summary: An AI-enabled operations initiative combining bounded agentic knowledge workflows, pipeline monitoring, and automated business checks.
 role: AI Strategy & Solutions Consultant
 client: Fortune 500 consumer goods enterprise

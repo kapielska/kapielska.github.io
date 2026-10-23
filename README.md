@@ -10,7 +10,7 @@ Public GitHub Pages portfolio of transformation, applied AI, and data initiative
 4. Use `poc`, `mvp`, or `production` for `maturity`. For `engagement`, use `Strategy & Architecture`, `Transformation & Modernization`, `Applied Research & Innovation`, `Process & Knowledge Design`, `Hands-on Engineering`, or another short phrase describing the kind of engagement you brought to the work.
 5. Keep the template sections: challenge, strategic rationale, technical approach, contribution, and future direction.
 6. Set the next numeric `order` and choose an accent color.
-7. Preview locally with `bundle exec jekyll serve` or `jekyll serve`, then commit and push.
+7. Run `bundle install` to install the project's Jekyll dependency. Preview locally with `bundle exec jekyll serve`, then commit and push.
 
 No index page or filter code needs to change when onboarding a project: the collection and filter options are generated automatically from project metadata.
 
