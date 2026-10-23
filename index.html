@@ -91,18 +91,30 @@ title: Marta Kapielska | Strategy, Transformation & Applied AI
     <div><p class="eyebrow">Credentials</p><h2 id="credentials-title">Certifications</h2></div>
   </div>
   <ul class="credential-grid">
-    {% for c in site.data.credentials %}
+    {% assign credentials = site.data.credentials | sort: 'issued' | reverse %}
+    {% assign credential_groups = 'active,other' | split: ',' %}
+    {% for credential_group in credential_groups %}
+    {% for c in credentials %}
     {% assign status = c.status %}
     {% if status == nil and c.expires %}{% assign today = 'now' | date: '%s' %}{% assign exp = c.expires | date: '%s' %}{% if exp < today %}{% assign status = 'expired' %}{% else %}{% assign status = 'active' %}{% endif %}{% elsif status == nil %}{% assign status = 'active' %}{% endif %}
+    {% assign show_credential = false %}
+    {% if credential_group == 'active' %}
+      {% if status == 'active' %}{% assign show_credential = true %}{% endif %}
+    {% elsif status != 'active' %}
+      {% assign show_credential = true %}
+    {% endif %}
+    {% if show_credential %}
     <li class="credential-card">
-      <img class="credential-badge" src="{{ c.badge | relative_url }}" alt="" width="72" height="72" loading="lazy">
+      {% if c.badge %}<img class="credential-badge" src="{{ c.badge | relative_url }}" alt="" width="72" height="72" loading="lazy">{% endif %}
       <div class="credential-body">
         <h3>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener noreferrer">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
         <p class="credential-issuer">{{ c.issuer }}</p>
-        <p class="credential-dates">Issued {{ c.issued | date: '%b %Y' }}{% if status == 'retired' and c.retired %} · Retired {{ c.retired | date: '%-d %b %Y' }}{% elsif c.expires %} · {% if status == 'active' %}Valid until{% else %}Expired{% endif %} {{ c.expires | date: '%b %Y' }}{% endif %}</p>
+        <p class="credential-dates">Issued {{ c.issued | date: '%b %Y' }}{% if c.credential_id %} · ID {{ c.credential_id }}{% endif %}{% if status == 'retired' and c.retired %} · Retired {{ c.retired | date: '%-d %b %Y' }}{% elsif c.expires %} · {% if status == 'active' %}Valid until{% else %}Expired{% endif %} {{ c.expires | date: '%b %Y' }}{% endif %}</p>
       </div>
       <span class="credential-status status-{{ status }}">{{ status }}</span>
     </li>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </ul>
 </section>
