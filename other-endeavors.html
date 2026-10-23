@@ -1,0 +1,36 @@
+---
+layout: default
+title: Other endeavors | Marta Kapielska
+description: Scientific papers, activism, and other endeavors by Marta Kapielska.
+permalink: /other-endeavors/
+---
+<div class="endeavors-page">
+  <header class="endeavors-intro">
+    <p class="eyebrow">Marta Kapielska</p>
+    <h1>Other endeavors</h1>
+    <p class="lede">Research, conversations, and pursuits beyond the project portfolio.</p>
+  </header>
+
+  {% for section in site.data.endeavors %}
+  {% assign entries = site.endeavors | where: 'category', section.id | sort: 'date' | reverse %}
+  <section class="endeavor-section" aria-labelledby="{{ section.id }}">
+    <h2 id="{{ section.id }}">{{ section.title | escape }}</h2>
+    {% if entries.size > 0 %}
+    <ul class="endeavor-list">
+      {% for entry in entries %}
+      <li class="endeavor-entry">
+        <h3>{% if entry.external_url %}<a href="{{ entry.external_url | escape }}" target="_blank" rel="noopener noreferrer">{{ entry.title | escape }}</a>{% else %}{{ entry.title | escape }}{% endif %}</h3>
+        {% if entry.authors %}<p class="endeavor-authors">{{ entry.authors | escape }}</p>{% endif %}
+        {% if entry.source or entry.date %}
+        <p class="endeavor-meta">{% if entry.source %}{{ entry.source | escape }}{% endif %}{% if entry.source and entry.date %} &middot; {% endif %}{% if entry.date %}<time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%B %Y' }}</time>{% endif %}</p>
+        {% endif %}
+        <div class="endeavor-description">{{ entry.content | markdownify }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="endeavor-pending">{{ section.empty_message | escape }}</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>

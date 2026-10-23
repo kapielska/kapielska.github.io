@@ -38,6 +38,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
   max-width: 1240px;
   margin: 0 auto;
   padding: 22px 5vw;
@@ -72,7 +74,7 @@ body {
   transition: transform .2s ease;
 }
 .brand:hover .brand-mark { transform: scale(1.08); }
-.site-nav { display: flex; align-items: center; gap: 28px; }
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
 .site-nav a {
   color: var(--muted);
   text-decoration: none;
@@ -80,6 +82,7 @@ body {
   transition: color .15s ease;
 }
 .site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
 .nav-cta {
   padding: 9px 16px;
   border-radius: 999px;
@@ -302,6 +305,22 @@ h1 em { color: var(--lime-deep); font-style: italic; }
 .project-meta > div:last-child { margin-bottom: 0; }
 .project-meta strong { font-weight: 600; }
 
+.endeavors-page { max-width: 1100px; margin: auto; padding: 50px 5vw 80px; }
+.endeavors-intro { padding: 30px 0 40px; }
+.endeavors-intro h1 { font-size: 56px; line-height: 1.1; letter-spacing: 0; overflow-wrap: anywhere; }
+.endeavor-section { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; padding: 36px 0; border-top: 1px solid var(--line); }
+.endeavor-section h2 { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: 0; }
+.endeavor-list { list-style: none; margin: 0; padding: 0; }
+.endeavor-entry { overflow-wrap: anywhere; }
+.endeavor-entry + .endeavor-entry { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line-soft); }
+.endeavor-entry h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.35; letter-spacing: 0; }
+.endeavor-entry a { color: var(--ink); text-underline-offset: 4px; }
+.endeavor-entry a:hover { color: var(--lime-deep); }
+.endeavor-authors, .endeavor-meta, .endeavor-description { margin: 0 0 10px; }
+.endeavor-meta { font-size: 14px; color: var(--muted); }
+.endeavor-description, .endeavor-pending { color: var(--muted); }
+.endeavor-pending { margin: 0; }
+
 .skip-link { position: absolute; left: -999px; }
 .skip-link:focus { left: 10px; top: 10px; background: var(--lime); padding: 8px; z-index: 50; border-radius: 6px; }
 
@@ -311,6 +330,9 @@ h1 em { color: var(--lime-deep); font-style: italic; }
 }
 
 @media (max-width: 700px) {
+  .site-nav { width: 100%; }
+  .endeavors-intro h1 { font-size: 40px; }
+  .endeavor-section { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .site-nav { gap: 14px; }
   .nav-cta { display: none; }
   .hero { min-height: auto; display: block; padding-top: 60px; }

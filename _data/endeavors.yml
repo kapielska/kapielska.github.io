@@ -1,0 +1,11 @@
+- id: scientific-papers
+  title: Scientific papers
+  empty_message: Publication details coming soon.
+
+- id: activism
+  title: Activism
+  empty_message: Activism details coming soon.
+
+- id: other-work
+  title: Other work
+  empty_message: More endeavors coming soon.

@@ -9,9 +9,13 @@ social:
   github: https://github.com/kapielska
   email: marta.kapielska@gmail.com
 collections:
+  endeavors:
+    output: false
   projects:
     output: true
     permalink: /projects/:name/
+exclude:
+  - endeavor-template.md
 defaults:
   - scope:
       path: ""
