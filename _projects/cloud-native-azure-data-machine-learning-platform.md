@@ -1,6 +1,6 @@
 ---
 title: Cloud-Native Azure Data & Machine Learning Platform
-summary: Productionized a modular wholesaler baseline capability within an Azure data and machine-learning platform supporting commercial analytics and recommendation workflows.
+summary: Productionized a modular wholesaler baseline capability within a broader Azure data and machine-learning platform operating across 29 countries, supporting 2.3M outlets and 14K+ SKUs.
 role: Senior ML Platform Engineer / Data Engineer
 client: Large beverage and consumer goods enterprise
 industry: Consumer Packaged Goods
@@ -13,7 +13,7 @@ accent: "#2f7f78"
 ---
 ## Business challenge and strategy
 
-The organization needed shared data and machine-learning capabilities to turn commercial and outlet data into consistent analytics and field recommendations. The broader platform supported a unified data model, micro-segmentation, outlet potential modeling, sales-visit optimization, and automated product-order recommendations.
+The organization needed shared data and machine-learning capabilities to turn commercial and outlet data into consistent analytics and field recommendations. The broader platform integrated 30+ enterprise data sources and supported a unified data model, micro-segmentation, outlet potential modeling, sales-visit optimization, and automated product-order recommendations across 29 countries, serving 2.3M outlets and 14K+ SKUs and generating 4M+ weekly order recommendations.
 
 Within that platform, wholesaler baseline logic was captured in client notebooks and a proof of concept. Productionizing it required a clearer processing structure, validation of data assumptions, and effort estimates for adapting the module to additional countries. The approach was to separate the baseline workflow into explicit stages that could be reviewed and tested without treating proof-of-concept behavior as a production contract.
 

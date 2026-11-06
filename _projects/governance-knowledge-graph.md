@@ -33,7 +33,7 @@ Governance data was difficult to query across relationships among applications, 
 
 ### System Architecture & Technical Leadership
 
-- Designed the ontology-driven ingestion pipeline and reusable mappings from source columns to graph classes and properties.
+- Implemented the ingestion pipeline using the ontology and source-to-graph mappings established before I joined the project.
 - Grounded natural-language query translation in the ontology and exposed typed query endpoints with multiple export formats.
 - Added API documentation, health checks, configuration profiles, and automated tests.
 
