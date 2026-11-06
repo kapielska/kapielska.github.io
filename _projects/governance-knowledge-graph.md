@@ -9,7 +9,7 @@ maturity: poc
 engagement: Applied Research & Innovation
 filter_technologies: [Java, Generative AI]
 technologies: [Java, Spring Boot, Apache Jena, SPARQL, Azure OpenAI]
-order: 3
+order: 6
 accent: "#5e86a4"
 ---
 ## Business challenge and strategy

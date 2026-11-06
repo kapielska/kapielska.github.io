@@ -6,6 +6,7 @@ client: Client profile # for example Fortune 500 consumer goods enterprise (no n
 industry: Client industry # for example Consumer Packaged Goods
 domain: Business domain # for example Commercial analytics, Knowledge management
 maturity: poc # poc, mvp, or production
+project_status: # Optional current delivery status, e.g. Rollout in progress
 engagement: Strategy & Architecture # Strategy & Architecture, Transformation & Modernization, Applied Research & Innovation, Process & Knowledge Design, or Hands-on Engineering
 filter_technologies: [Python, Apache Spark]
 technologies: [Technology one, Technology two, Technology three]

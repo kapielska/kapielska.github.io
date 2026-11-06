@@ -7,7 +7,7 @@ Public GitHub Pages portfolio of transformation, applied AI, and data initiative
 1. Copy `project-template.md` into `_projects/`.
 2. Give the file a kebab-case name, for example `_projects/customer-search.md`.
 3. Complete the YAML front matter, including `client` (an anonymous client profile, shown on the project page). Keep `technologies` as the complete project-specific stack and use `filter_technologies` for the relevant technologies from the curated filter list on the home page.
-4. Use `poc`, `mvp`, or `production` for `maturity`. For `engagement`, use `Strategy & Architecture`, `Transformation & Modernization`, `Applied Research & Innovation`, `Process & Knowledge Design`, `Hands-on Engineering`, or another short phrase describing the kind of engagement you brought to the work.
+4. Use `poc`, `mvp`, or `production` for `maturity`. Optionally set `project_status` to describe current delivery activity (for example, `Rollout in progress`); this is separate from solution maturity. For `engagement`, use `Strategy & Architecture`, `Transformation & Modernization`, `Applied Research & Innovation`, `Process & Knowledge Design`, `Hands-on Engineering`, or another short phrase describing the kind of engagement you brought to the work.
 5. Keep the template sections: challenge, strategic rationale, technical approach, contribution, and future direction.
 6. Set the next numeric `order` and choose an accent color.
 7. Run `bundle install` to install the project's Jekyll dependency. Preview locally with `bundle exec jekyll serve`, then commit and push.

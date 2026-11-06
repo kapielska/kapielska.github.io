@@ -85,7 +85,7 @@ title: Marta Kapielska | Strategy, Transformation & Applied AI
     {% assign projects = site.projects | sort: 'order' %}
     {% for project in projects %}
     <article class="project-card" data-project-card data-role="{{ project.role | slugify }}" data-technology="{% for technology in project.filter_technologies %}{{ technology | slugify }} {% endfor %}" data-industry="{{ project.industry | slugify }}" data-domain="{{ project.domain | slugify }}" data-maturity="{{ project.maturity | slugify }}" data-engagement="{{ project.engagement | slugify }}" style="--card-accent: {{ project.accent }}">
-      <div class="card-top"><span class="project-index">{{ project.order | prepend: '0' | slice: -2, 2 }}</span><span class="stage">{{ project.maturity | upcase }}</span></div>
+      <div class="card-top"><span class="project-index">{{ project.order | prepend: '0' | slice: -2, 2 }}</span><span class="card-badges"><span class="stage">{{ project.maturity | upcase }}</span>{% if project.project_status %}<span class="project-status">{{ project.project_status }}</span>{% endif %}</span></div>
       <h3>{{ project.title }}</h3>
       <p>{{ project.summary }}</p>
       <div class="card-bottom"><span>{{ project.engagement }}</span><a href="{{ project.url | relative_url }}" aria-label="Read more about {{ project.title }}">View case study →</a></div>

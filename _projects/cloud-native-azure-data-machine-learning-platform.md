@@ -9,7 +9,7 @@ maturity: production
 engagement: Hands-on Engineering
 filter_technologies: [Python, Databricks, Microsoft Azure]
 technologies: [Python, PySpark, Databricks, Azure Data Factory, Azure DevOps, Microsoft Azure]
-order: 5
+order: 3
 accent: "#2f7f78"
 ---
 ## Business challenge and strategy

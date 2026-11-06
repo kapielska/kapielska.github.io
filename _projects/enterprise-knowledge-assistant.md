@@ -9,7 +9,7 @@ maturity: production
 engagement: Hands-on Engineering
 filter_technologies: [Python, Generative AI, AI Agents, LangGraph, FastAPI, PostgreSQL]
 technologies: [Python, AI Agents, FastAPI, LangGraph, Azure AI Search, PostgreSQL, Azure Machine Learning, Docker, Kubernetes]
-order: 2
+order: 4
 accent: "#7c9f2e"
 ---
 ## Business challenge and strategy

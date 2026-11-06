@@ -4,7 +4,7 @@ layout: default
 <article class="project-page">
   <a class="back-link" href="{{ '/' | relative_url }}#work">← Back to selected work</a>
   <header class="project-hero">
-    <p class="eyebrow">{{ page.maturity | upcase }} · {{ page.domain }}</p>
+    <p class="eyebrow">{{ page.maturity | upcase }} · {{ page.domain }}{% if page.project_status %} · {{ page.project_status }}{% endif %}</p>
     <h1>{{ page.title }}</h1>
     <p class="lede">{{ page.summary }}</p>
     <div class="tag-row">{% for technology in page.technologies %}<span class="tag">{{ technology }}</span>{% endfor %}</div>
@@ -18,6 +18,7 @@ layout: default
       <div><span class="meta-label">Industry</span><strong>{{ page.industry }}</strong></div>
       <div><span class="meta-label">Business domain</span><strong>{{ page.domain }}</strong></div>
       <div><span class="meta-label">Maturity</span><strong>{{ page.maturity | upcase }}</strong></div>
+      {% if page.project_status %}<div><span class="meta-label">Project status</span><strong>{{ page.project_status }}</strong></div>{% endif %}
     </aside>
   </div>
 </article>

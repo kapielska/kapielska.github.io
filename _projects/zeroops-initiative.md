@@ -1,18 +1,21 @@
 ---
 title: ZeroOps Initiative
-summary: An AI-enabled operations initiative combining bounded agentic knowledge workflows, pipeline monitoring, and automated business checks.
+summary: An AI-enabled operations initiative combining bounded agentic knowledge workflows, pipeline monitoring, and automated business checks, with production deployment in progress.
 role: Lead Consultant, AI Strategy & Solutions
 client: Fortune 500 consumer goods enterprise
 industry: Consumer Packaged Goods
 domain: Operations and service management
 maturity: mvp
+project_status: Production deployment in progress
 engagement: Strategy & Architecture
 filter_technologies: [Generative AI, AI Agents, Databricks, Microsoft Azure]
 technologies: [Azure Monitor, KQL, Databricks, Microsoft Teams, Webhooks, GitHub Copilot, AI Agents, Node.js, Markdown, YAML, Git]
-order: 4
+order: 2
 accent: "#a37bdb"
 ---
 ## Business challenge and strategy
+
+The initiative is at MVP maturity, with deployment to production in progress; production operation is not yet complete.
 
 Operations teams relied on manual data checks and incident knowledge spread across records, technical documentation, service guides, and working notes. Zero Ops combined pipeline monitoring and automated validation with bounded agentic workflows that turn operational evidence into reviewable guidance. This let teams catch data issues before escalation and reuse knowledge without treating drafts as approved procedures. H1 2026 recorded 932 tickets, or about 36 per week; a 90-day measurement period averaged 18 tickets per week, reported as a 50% reduction. Automated checks identified data issues for correction before they were raised as incidents.
 
@@ -65,6 +68,7 @@ request
 ### Cross-Functional Governance & Delivery
 
 - Bridged business and engineering stakeholders to turn strategic priorities into feasible solutions and delivery plans.
+- **In progress:** Supporting deployment of the initiative to production.
 - Championed AI adoption with operations stakeholders, addressing job-displacement concerns through stakeholder alignment and workforce enablement.
 - Engaged executive, operations, technical, project management, and legal/compliance stakeholders on adoption, governance, and process changes.
 

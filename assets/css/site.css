@@ -214,11 +214,20 @@ h1 em { color: var(--lime-deep); font-style: italic; }
 @keyframes card-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 .card-top, .card-bottom { display: flex; justify-content: space-between; align-items: center; }
+.card-badges { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
 .project-index, .stage { font: 11px var(--mono); color: var(--muted); }
 .stage {
   text-transform: uppercase;
   color: var(--card-accent);
   background: color-mix(in srgb, var(--card-accent) 14%, transparent);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.project-status {
+  font: 11px var(--mono);
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px solid var(--line);
   padding: 4px 10px;
   border-radius: 999px;
 }
