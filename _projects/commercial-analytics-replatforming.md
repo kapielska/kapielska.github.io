@@ -7,6 +7,7 @@ industry: Consumer Packaged Goods
 domain: Commercial analytics
 maturity: production
 engagement: Transformation & Modernization
+filter_technologies: [Scala, Apache Spark, Databricks, Microsoft Azure]
 technologies: [Scala, Apache Spark, Databricks, Azure, Azure Data Factory, R]
 order: 1
 accent: "#ff7a53"

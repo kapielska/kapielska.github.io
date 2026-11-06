@@ -7,6 +7,7 @@ industry: Consumer Packaged Goods
 domain: Retail analytics and recommendations
 maturity: mvp
 engagement: Hands-on Engineering
+filter_technologies: [Python, Apache Spark, Databricks, Google Cloud]
 technologies: [Python, PySpark, Apache Spark, Databricks, Google Cloud, Delta Lake, MLflow, SynapseML LightGBM, BigQuery]
 order: 6
 accent: "#cc8b2f"

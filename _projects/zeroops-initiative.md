@@ -7,6 +7,7 @@ industry: Consumer Packaged Goods
 domain: Operations and service management
 maturity: mvp
 engagement: Strategy & Architecture
+filter_technologies: [Generative AI, AI Agents, Databricks, Microsoft Azure]
 technologies: [Azure Monitor, KQL, Databricks, Microsoft Teams, Webhooks, GitHub Copilot, AI Agents, Node.js, Markdown, YAML, Git]
 order: 4
 accent: "#a37bdb"

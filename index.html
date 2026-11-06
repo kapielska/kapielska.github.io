@@ -14,7 +14,7 @@ title: Marta Kapielska | Strategy, Transformation & Applied AI
 <section class="work-section" id="work" aria-labelledby="work-title">
   <div class="section-heading">
     <div><p class="eyebrow">The portfolio</p><h2 id="work-title">Selected work</h2></div>
-    <p class="section-intro">Explore initiatives by the kind of engagement, my role, the business domain, the technologies involved, the industry, or how mature the solution became.</p>
+    <p class="section-intro">Explore initiatives by engagement, role, business domain, key technologies, industry, or solution maturity.</p>
   </div>
 
   <div class="filters" aria-label="Filter projects">
@@ -46,8 +46,18 @@ title: Marta Kapielska | Strategy, Transformation & Applied AI
       <span class="filter-label">Technology</span>
       <div class="chip-row" role="group" aria-label="Filter by technology">
         <button type="button" class="chip is-active" data-value="all">All technologies</button>
-        {% assign technologies = site.projects | map: 'technologies' | join: ',' | split: ',' | uniq | sort %}
-        {% for value in technologies %}<button type="button" class="chip" data-value="{{ value | strip | slugify }}">{{ value | strip }}</button>{% endfor %}
+        <button type="button" class="chip" data-value="python">Python</button>
+        <button type="button" class="chip" data-value="java">Java</button>
+        <button type="button" class="chip" data-value="scala">Scala</button>
+        <button type="button" class="chip" data-value="generative-ai">Generative AI</button>
+        <button type="button" class="chip" data-value="ai-agents">AI Agents</button>
+        <button type="button" class="chip" data-value="apache-spark">Apache Spark</button>
+        <button type="button" class="chip" data-value="databricks">Databricks</button>
+        <button type="button" class="chip" data-value="microsoft-azure">Microsoft Azure</button>
+        <button type="button" class="chip" data-value="google-cloud">Google Cloud</button>
+        <button type="button" class="chip" data-value="langgraph">LangGraph</button>
+        <button type="button" class="chip" data-value="fastapi">FastAPI</button>
+        <button type="button" class="chip" data-value="postgresql">PostgreSQL</button>
       </div>
     </div>
     <div class="filter-group" data-filter-group="industry">
@@ -74,7 +84,7 @@ title: Marta Kapielska | Strategy, Transformation & Applied AI
   <div class="project-grid" data-project-grid>
     {% assign projects = site.projects | sort: 'order' %}
     {% for project in projects %}
-    <article class="project-card" data-project-card data-role="{{ project.role | slugify }}" data-technology="{% for technology in project.technologies %}{{ technology | slugify }} {% endfor %}" data-industry="{{ project.industry | slugify }}" data-domain="{{ project.domain | slugify }}" data-maturity="{{ project.maturity | slugify }}" data-engagement="{{ project.engagement | slugify }}" style="--card-accent: {{ project.accent }}">
+    <article class="project-card" data-project-card data-role="{{ project.role | slugify }}" data-technology="{% for technology in project.filter_technologies %}{{ technology | slugify }} {% endfor %}" data-industry="{{ project.industry | slugify }}" data-domain="{{ project.domain | slugify }}" data-maturity="{{ project.maturity | slugify }}" data-engagement="{{ project.engagement | slugify }}" style="--card-accent: {{ project.accent }}">
       <div class="card-top"><span class="project-index">{{ project.order | prepend: '0' | slice: -2, 2 }}</span><span class="stage">{{ project.maturity | upcase }}</span></div>
       <h3>{{ project.title }}</h3>
       <p>{{ project.summary }}</p>

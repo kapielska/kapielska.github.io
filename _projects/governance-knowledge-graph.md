@@ -7,6 +7,7 @@ industry: Consumer Packaged Goods
 domain: Governance and risk
 maturity: poc
 engagement: Applied Research & Innovation
+filter_technologies: [Java, Generative AI]
 technologies: [Java, Spring Boot, Apache Jena, SPARQL, Azure OpenAI]
 order: 3
 accent: "#5e86a4"

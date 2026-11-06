@@ -7,6 +7,7 @@ industry: Client industry # for example Consumer Packaged Goods
 domain: Business domain # for example Commercial analytics, Knowledge management
 maturity: poc # poc, mvp, or production
 engagement: Strategy & Architecture # Strategy & Architecture, Transformation & Modernization, Applied Research & Innovation, Process & Knowledge Design, or Hands-on Engineering
+filter_technologies: [Python, Apache Spark]
 technologies: [Technology one, Technology two, Technology three]
 order: 5
 accent: "#5e86a4"

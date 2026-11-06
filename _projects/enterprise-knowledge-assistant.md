@@ -7,6 +7,7 @@ industry: Consumer Packaged Goods
 domain: Knowledge management
 maturity: production
 engagement: Hands-on Engineering
+filter_technologies: [Python, Generative AI, AI Agents, LangGraph, FastAPI, PostgreSQL]
 technologies: [Python, AI Agents, FastAPI, LangGraph, Azure AI Search, PostgreSQL, Azure Machine Learning, Docker, Kubernetes]
 order: 2
 accent: "#7c9f2e"
